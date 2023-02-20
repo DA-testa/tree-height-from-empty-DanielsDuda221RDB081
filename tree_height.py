@@ -3,10 +3,7 @@ import numpy
 import sys
 import threading
 
-s=0
-x=0
-height=1
-max_height=0
+
 
 def compute_height(n, parents):
     arr = numpy.array(range(n))
@@ -63,7 +60,7 @@ def main():
 
 
     
-main()
+
 
 
 
