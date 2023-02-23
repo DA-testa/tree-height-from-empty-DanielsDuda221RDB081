@@ -1,7 +1,5 @@
 # python3
 import numpy
-import sys
-import threading
 
 
 
@@ -33,34 +31,34 @@ def compute_height(n, parents):
             max_height=max(max_height, height)
             height = 1
             x=s
-            continue
-        
+            continue      
         else:
-            height = height +1
-            
-
-
-
-            
+            height = height +1    
 
 
 
 
 def main():
+    # text = input()
+    # if "I" in text:
+    #     n= int(input())
+    # elif "F" in text:
+    #     pass
+    # else:
+    #     return()
+    # parents= input()
+    # result = compute_height(n, parents)
+    # print(result)
     text = input()
-    if "I" in text:
-        n= int(input())
-    elif "F" in text:
-        pass
+    if "F" in text:
+        text2 = input()
     else:
         return()
-    parents= input()
+    if "a" in text2:
+        return()
+    with open ("test/"+text2, encoding="utf-8") as fails:
+        n = int (fails.readline())
+        parents = fails.readline()
     result = compute_height(n, parents)
     print(result)
-
 main()
-    
-
-
-
-
