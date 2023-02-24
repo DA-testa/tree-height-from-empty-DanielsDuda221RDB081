@@ -3,7 +3,7 @@ import numpy as np
 import sys
 import threading
 
-#kjdsnfkjsnd
+
 def compute_height(n, parents):
     arr = np.array(range(n))
     parents = parents.split()
