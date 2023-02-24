@@ -1,12 +1,12 @@
 #python3
-import numpy
+import numpy as np
 import sys
 import threading
 
 
 
 def compute_height(n, parents):
-    arr = numpy.array(range(n))
+    arr = np.array(range(n))
     parents = parents.split()
     parents = map(int, parents)
     parents = list(parents)
