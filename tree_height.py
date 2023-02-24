@@ -1,5 +1,7 @@
-# python3
+#python3
 import numpy
+import sys
+import threading
 
 
 
@@ -16,10 +18,6 @@ def compute_height(n, parents):
         arr[x] = i
         x=x+1
     x=0
-    
-    
-    
-
     while(True):
         x=arr[x]
         
@@ -39,26 +37,24 @@ def compute_height(n, parents):
 
 
 def main():
-    # text = input()
-    # if "I" in text:
-    #     n= int(input())
-    # elif "F" in text:
-    #     pass
-    # else:
-    #     return()
-    # parents= input()
-    # result = compute_height(n, parents)
-    # print(result)
     text = input()
-    if "F" in text:
+    if "I" in text:
+        n= int(input())
+        parents= input()
+    elif "F" in text:
         text2 = input()
+        if "a" in text2:
+            return()
+        with open ("test/"+text2, encoding="utf-8") as fails:
+            n = int (fails.readline())
+            parents = fails.readline()
     else:
         return()
-    if "a" in text2:
-        return()
-    with open ("test/"+text2, encoding="utf-8") as fails:
-        n = int (fails.readline())
-        parents = fails.readline()
     result = compute_height(n, parents)
     print(result)
-main()
+# In Python, the default limit on recursion depth is rather low,
+# so raise it here for this problem. Note that to take advantage
+# of bigger stack, we have to launch the computation in a new thread.
+sys.setrecursionlimit(10**7)  # max depth of recursion
+threading.stack_size(2**27)   # new thread will get stack of such size
+threading.Thread(target=main).start()
