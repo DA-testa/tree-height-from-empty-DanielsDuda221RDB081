@@ -5,6 +5,7 @@ import threading
 import numpy as np
 
 
+
 def compute_height(n, parents):
     arr = np.array(range(n))
     parents = parents.split()
